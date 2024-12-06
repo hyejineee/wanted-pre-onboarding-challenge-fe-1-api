@@ -11,6 +11,7 @@ export const findTodos = (options: FindTodosOptions) => {
 
   return new TodoQueryService(todos)
     .filterByPriority(options.priorityFilter)
+    .filterByStatus(options.statusFilter)
     .searchByKeyword(options.keyword)
     .sortByField(options.sort, options.order)
     .getResult();

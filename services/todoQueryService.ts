@@ -15,6 +15,13 @@ export class TodoQueryService {
     return this;
   }
 
+  filterByStatus(status?: Todo["status"]) {
+    if (status) {
+      this.todos = this.todos.filter((todo) => todo.status === status);
+    }
+    return this;
+  }
+
   // 검색: 키워드가 title 또는 content에 포함된 항목 필터
   searchByKeyword(keyword?: string) {
     if (keyword) {
